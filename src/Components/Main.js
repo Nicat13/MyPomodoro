@@ -7,9 +7,8 @@ import AboutLayout from '../Layouts/AboutLayout'
 export default function Main() {
     const [selectedLayout, setSelectedLayout] = useState(null);
     let layouts = [NewsLayout, AboutLayout]
-    let Body = () => <BodyComponent layout={setSelectedLayout} />
+    let Body = () => <BodyComponent layout={selectedLayout} setLayout={setSelectedLayout} />
     let Layout = layouts.find(obj => obj.name === selectedLayout);
-
     return (
         <>
             {!selectedLayout && <Body />}

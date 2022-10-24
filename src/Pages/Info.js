@@ -1,10 +1,13 @@
 import { React, useEffect, useState } from 'react';
 
-export default function Info({ layout }) {
+export default function Info({ layout, setLayout }) {
     const SELECTED_LAYOUT = 'AboutLayout';
 
     useEffect(() => {
-        layout(SELECTED_LAYOUT);
+        if (SELECTED_LAYOUT === layout) {
+            //states
+        }
+        setLayout(SELECTED_LAYOUT);
     })
 
     return (

@@ -4,12 +4,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from '../Pages/Home'
 import Info from '../Pages/Info'
 
-export default function Body({ layout }) {
+export default function Body({ layout, setLayout }) {
     return (
         <Router>
             <Routes>
-                <Route exact path='/' element={<Home layout={layout} />} />
-                <Route path='/info' element={<Info layout={layout} />} />
+                <Route exact path='/' element={<Home layout={layout} setLayout={setLayout} />} />
+                <Route path='/info' element={<Info layout={layout} setLayout={setLayout} />} />
             </Routes>
         </Router>
     )
