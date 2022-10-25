@@ -1,6 +1,6 @@
-export default async function FetchData() {
+export default async function FetchData(url) {
     let response = null;
-    await fetch(`https://jsonplaceholder.typicode.com/users`)
+    await fetch(url)
         .then(res => {
             if (!res.ok) {
                 throw Error('Could not fetch the data for that resource');

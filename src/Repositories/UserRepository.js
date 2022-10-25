@@ -1,14 +1,11 @@
-import FetchData from '../DataContexts/DataFetcher'
+import FetchData from '../DataContexts/FetchData'
+import PostData from '../DataContexts/PostData'
 import { User } from '../Models/User.js'
 
 export class UserRepository {
 
-    constructor() {
-        this.USERS = [];
-    }
-
     static async getAll() {
-        let result = await FetchData();
+        let result = await FetchData(`https://jsonplaceholder.typicode.com/users`);
         let userList = []
         if (Array.isArray(result)) {
             result.map(u => {
@@ -18,12 +15,12 @@ export class UserRepository {
         return userList;
     }
 
-    // add(user) {
-    //     this.userDataContext.add(user).then((newUser) => {
-
-    //         this.users.push(user);
-    //     }).catch((error) => {
-    //         console.error('Error:', error);
-    //     });
-    // }
+    static async add(user) {
+        let result = await PostData('https://jsonplaceholder.typicode.com/posts', {
+            title: user.Name,
+            body: 'bar',
+            userId: user.Id,
+        }, { 'Content-type': 'application/json; charset=UTF-8' });
+        return result;
+    }
 }
