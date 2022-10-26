@@ -1,9 +1,11 @@
+import { ErrorModel } from '../Models/ErrorModel'
+
 export default async function FetchData(url) {
     let response = null;
     await fetch(url)
         .then(res => {
             if (!res.ok) {
-                throw Error('Could not fetch the data for that resource');
+                return new ErrorModel('Could not fetch the data for that resource');
             }
             return res.json();
         })
@@ -14,6 +16,7 @@ export default async function FetchData(url) {
             if (err.name === 'AbortError') {
                 console.log('fetch aborted')
             }
+            return new ErrorModel(err.name);
         })
     return response;
 }

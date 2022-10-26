@@ -6,13 +6,16 @@ export class UserRepository {
 
     static async getAll() {
         let result = await FetchData(`https://jsonplaceholder.typicode.com/users`);
-        let userList = []
-        if (Array.isArray(result)) {
-            result.map(u => {
-                userList.push(new User(u.id, u.name, u.email));
-            })
+        if (result.constructor.name != 'ErrorModel') {
+            let userList = []
+            if (Array.isArray(result)) {
+                result.map(u => {
+                    userList.push(new User(u.id, u.name, u.email));
+                })
+            }
+            return userList;
         }
-        return userList;
+        return result
     }
 
     static async add(user) {

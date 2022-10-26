@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AboutLayout({ Body }) {
+export default function AboutLayout({ Body, error }) {
     return (
         <>
             Selected Layout: AboutLayout
@@ -8,6 +8,7 @@ export default function AboutLayout({ Body }) {
             <br />
             HEADER
             <Body />
+            {error && <span>error baw verdi</span>}
             FOOTER
         </>
     )
