@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Main from './Components/Main';
+import Body from './Components/Body';
 
 
 function App() {
+  console.log('App init');
   return (
     <>
-      <Main />
+      <Body />
     </>
   );
 }

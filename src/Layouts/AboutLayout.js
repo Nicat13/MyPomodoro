@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function AboutLayout({ Body, error }) {
+export default function AboutLayout({ children, error }) {
     return (
         <>
             Selected Layout: AboutLayout
             <br />
             <br />
             HEADER
-            <Body />
-            {error && <span>error baw verdi</span>}
+            {children}
+            {error && <p>{error}</p>}
             FOOTER
         </>
     )
