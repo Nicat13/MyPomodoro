@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function NewsLayout({ Body, error }) {
+export default function NewsLayout({ children, error }) {
     return (
         <>
             Selected Layout: NewsLayout
             <br />
             <br />
             HEADER
-            <Body />
-            {error && <h4>{error.Message}</h4>}
+            {children}
+            {error && <p>{error}</p>}
             FOOTER
         </>
     )

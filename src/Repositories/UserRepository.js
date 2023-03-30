@@ -1,5 +1,5 @@
-import FetchData from '../DataContexts/FetchData'
-import PostData from '../DataContexts/PostData'
+import FetchData from '../DataAdapters/FetchData'
+import PostData from '../DataAdapters/PostData'
 import { User } from '../Models/User.js'
 
 export class UserRepository {

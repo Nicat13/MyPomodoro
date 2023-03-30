@@ -17,5 +17,5 @@ export default async function PostData(url, body, headers) {
             }
             return new ContextResult(null, true, err.name);
         });
-    return new ContextResult(response, false, 'OK');;
+    return new ContextResult(null, true, 'salam dottarr');;
 }

@@ -18,5 +18,5 @@ export default async function FetchData(url) {
             }
             return new ContextResult(null, true, err.name);
         })
-    return new ContextResult(response, false, 'OK');;
+    return new ContextResult(null, true, 'salam dottarr fetch');;
 }

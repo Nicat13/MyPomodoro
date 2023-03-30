@@ -1,16 +1,14 @@
 import { React, useEffect, useState } from 'react';
+import NewsLayout from '../Layouts/NewsLayout.js';
 
 export default function Info({ layout, setLayout }) {
-    const SELECTED_LAYOUT = 'AboutLayout';
-
-    useEffect(() => {
-        if (SELECTED_LAYOUT === layout) {
-            //states
-        }
-        setLayout(SELECTED_LAYOUT);
-    })
+    const [error, setError] = useState(null);
 
     return (
-        <div>Info page</div>
+        <NewsLayout error={error}>
+            <div>
+                info page
+            </div>
+        </NewsLayout>
     )
 }
